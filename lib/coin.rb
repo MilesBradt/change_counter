@@ -9,6 +9,7 @@ class Coins
   end
 
   def count_change(change)
+    change = change * 100
     output = ""
     quarter_amount = 0
     dime_amount = 0
@@ -61,6 +62,6 @@ class Coins
         end
       end
     end
-    puts output
+    return output
   end
 end
