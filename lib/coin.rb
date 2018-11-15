@@ -15,39 +15,45 @@ class Coins
 
   def count_change(change)
     output = ""
-    coin_amount = 0
+    quarter_amount = 0
+    dime_amount = 0
+    nickel_amount = 0
+    penny_amount = 0
     until change == 0 do
       if change >= 25
-        coin_amount += 1
+        binding.pry
+        quarter_amount += 1
         change -= 25
-        if coin_amount > 1
-        output = coin_amount.to_s + " " + @coins.fetch(25) + "s"
+        if quarter_amount > 1
+        output = quarter_amount.to_s + " " + @coins.fetch(25) + "s"
         else
-        output = coin_amount.to_s + " " + @coins.fetch(25)
+        output = quarter_amount.to_s + " " + @coins.fetch(25)
         end
-      elsif change >= 10
-        coin_amount += 1
+      elsif (change >= 10) & (change < 25)
+        binding.pry
+        dime_amount += 1
         change -= 10
-        if coin_amount > 1
-        output = coin_amount.to_s + " " + @coins.fetch(10) + "s"
+        if dime_amount > 1
+        output = output + dime_amount.to_s + " " + @coins.fetch(10) + "s"
         else
-        output = coin_amount.to_s + " " + @coins.fetch(10)
+        output = output + dime_amount.to_s + " " + @coins.fetch(10)
         end
-      elsif change >= 5
-        coin_amount += 1
+      elsif (change >= 5) & (change < 10)
+        binding.pry
+        nickel_amount += 1
         change -= 5
-        if coin_amount > 1
-        output = coin_amount.to_s + " " + @coins.fetch(5) + "s"
+        if nickel_amount > 1
+        output = output + nickel_amount.to_s + " " + @coins.fetch(5) + "s"
         else
-        output = coin_amount.to_s + " " + @coins.fetch(5)
+        output = output + nickel_amount.to_s + " " + @coins.fetch(5)
         end
-      elsif change >= 1
-        coin_amount += 1
+      elsif (change >= 1) & (change < 5)
+        penny_amount += 1
         change -= 1
-        if coin_amount > 1
-        output = coin_amount.to_s + " " + @coins.fetch(2)
+        if penny_amount > 1
+        output = output + penny_amount.to_s + " " + @coins.fetch(2)
         else
-        output = coin_amount.to_s + " " + @coins.fetch(1)
+        output = output + penny_amount.to_s + " " + @coins.fetch(1)
         end
       end
     end
