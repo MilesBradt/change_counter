@@ -62,6 +62,7 @@ class Coins
         end
       end
     end
+    p output
     return output
   end
 end
