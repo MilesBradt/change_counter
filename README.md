@@ -6,6 +6,8 @@
 
 _Runs a two digit decimal as an argument to output USD change_
 
+![Screenshot](https://i.imgur.com/9nhLJkv.png)
+
 ## Setup/Installation Requirements
 
 * _Clone GitHub URL in terminal_
